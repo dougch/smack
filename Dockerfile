@@ -4,10 +4,13 @@ MAINTAINER Shaobo He <shaobo@cs.utah.edu>
 ENV SMACKDIR /home/user/smack
 
 RUN apt-get update && \
-      apt-get -y install \
+      DEBIAN_FRONTEND=noninteractive apt-get -y install \
       software-properties-common \
       wget \
-      sudo
+      sudo \
+      curl \
+      gem \
+      git
 
 # Borrowed from JFS
 # Create `user` user for container with password `user`.  and give it
